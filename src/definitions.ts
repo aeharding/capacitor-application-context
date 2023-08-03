@@ -1,3 +1,5 @@
 export interface ApplicationContextPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>;
+  updateApplicationContext(
+    applicationContext: Record<string, string>,
+  ): Promise<void>;
 }

@@ -12,11 +12,7 @@ public class ApplicationContextPlugin extends Plugin {
     private ApplicationContext implementation = new ApplicationContext();
 
     @PluginMethod
-    public void echo(PluginCall call) {
-        String value = call.getString("value");
-
-        JSObject ret = new JSObject();
-        ret.put("value", implementation.echo(value));
-        call.resolve(ret);
+    public void updateApplicationContext(PluginCall call) {
+        call.resolve();
     }
 }

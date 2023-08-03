@@ -6,8 +6,11 @@ export class ApplicationContextWeb
   extends WebPlugin
   implements ApplicationContextPlugin
 {
-  async echo(options: { value: string }): Promise<{ value: string }> {
-    console.log('ECHO', options);
-    return options;
+  async updateApplicationContext(
+    applicationContext: Record<string, string>,
+  ): Promise<void> {
+    applicationContext; // Silently do nothing
+
+    return undefined;
   }
 }

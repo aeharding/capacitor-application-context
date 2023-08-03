@@ -1,5 +1,6 @@
 import Foundation
 import Capacitor
+import WatchConnectivity
 
 /**
  * Please read the Capacitor iOS Plugin Development Guide
@@ -9,10 +10,14 @@ import Capacitor
 public class ApplicationContextPlugin: CAPPlugin {
     private let implementation = ApplicationContext()
 
-    @objc func echo(_ call: CAPPluginCall) {
-        let value = call.getString("value") ?? ""
-        call.resolve([
-            "value": implementation.echo(value)
-        ])
+    @objc func updateApplicationContext(_ call: CAPPluginCall) {
+        do {
+            try WCSession.default.updateApplicationContext(call.dictionaryRepresentation as! [String : Any])
+            print("Called updateApplicationContext successfully.")
+        } catch let error {
+            print("Error updating application context: \(error.localizedDescription). Have you set up the watch delegates?")
+        }
+
+        call.resolve()
     }
 }

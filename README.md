@@ -13,25 +13,34 @@ npx cap sync
 
 <docgen-index>
 
-* [`echo(...)`](#echo)
+* [`updateApplicationContext(...)`](#updateapplicationcontext)
+* [Type Aliases](#type-aliases)
 
 </docgen-index>
 
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
-### echo(...)
+### updateApplicationContext(...)
 
 ```typescript
-echo(options: { value: string; }) => Promise<{ value: string; }>
+updateApplicationContext(applicationContext: Record<string, string>) => Promise<void>
 ```
 
-| Param         | Type                            |
-| ------------- | ------------------------------- |
-| **`options`** | <code>{ value: string; }</code> |
-
-**Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
+| Param                    | Type                                                            |
+| ------------------------ | --------------------------------------------------------------- |
+| **`applicationContext`** | <code><a href="#record">Record</a>&lt;string, string&gt;</code> |
 
 --------------------
+
+
+### Type Aliases
+
+
+#### Record
+
+Construct a type with a set of properties K of type T
+
+<code>{ [P in K]: T; }</code>
 
 </docgen-api>
