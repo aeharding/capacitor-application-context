@@ -1,6 +1,6 @@
 {
   "name": "capacitor-application-context",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Provides interface to set application context for an iOS Watch",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
