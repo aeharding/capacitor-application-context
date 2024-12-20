@@ -7,7 +7,12 @@ import WatchConnectivity
  * here: https://capacitorjs.com/docs/plugins/ios
  */
 @objc(ApplicationContextPlugin)
-public class ApplicationContextPlugin: CAPPlugin {
+public class ApplicationContextPlugin: CAPPlugin, CAPBridgedPlugin {
+    public let identifier = "ApplicationContextPlugin" 
+    public let jsName = "ApplicationContext" 
+    public let pluginMethods: [CAPPluginMethod] = [
+        CAPPluginMethod(name: "updateApplicationContext", returnType: CAPPluginReturnPromise),
+    ] 
     private let implementation = ApplicationContext()
 
     @objc func updateApplicationContext(_ call: CAPPluginCall) {
